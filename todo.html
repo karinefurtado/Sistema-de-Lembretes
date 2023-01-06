@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lembretes</title>
+  <meta name="description" content="Help managing daily activities. Be organized.">
+  <link rel="stylesheet" href="todo.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.min.js"></script>
+  
+  <script src="todo.js" defer></script>
+</head>
+
+<body>
+  <h3>Meus Lembretes</h3>
+  <div class="todo-grid-parent">
+
+    <div>
+      <div class="todo-input todo-block">
+        <span>Lembrete: </span>
+        <input type="text" placeholder="Insira um lembrete" required>
+        <span>Categoria: </span>
+        <input type="text" placeholder="Insira Uma Categoria" list="categoryList">
+        <datalist id="categoryList">
+          <option value="Pessoal"></option>
+          <option value="Trabalho"></option>
+        </datalist>
+        <span>Data:</span>
+        <input type="date" id="dateInput">
+        <span>Hora:</span>
+        <input type="time" id="timeInput">
+        <span></span>
+        <button id="addBtn">Adicionar</button>
+        <span></span>
+        <button id="sortBtn">Classificar por data</button>
+        <span></span>
+        <label><input type="checkbox" id="shortlistBtn"> Incompleto Primeiro </label>
+
+      </div>
+
+      <div class="todo-block todoTable-block">
+        <div class="itemsPerPage">
+          <span>itens por página</span>
+          <select id="itemsPerPageSelectElem">
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+          </select>
+        </div>
+
+        <table id="todoTable">
+          <tr>
+            <td></td>
+            <td>Data</td>
+            <td>Hora</td>
+            <td>Lembrete</td>
+            <td>
+              <select id="categoryFilter">
+              </select>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+
+        <div class="pagination-pages">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="todo-calendar  todo-block">
+      <div id='calendar'></div>
+    </div>
+
+  </div> 
+
+  <div class="todo-overlay" id="todo-overlay">
+    <div class="todo-modal" id="todo-modal">
+      <div class="todo-input todo-block">
+        <span>To-do: </span>
+        <input type="text" placeholder="Insira um novo lembrete" id="todo-edit-todo">
+        <span>Category: </span>
+        <input type="text" placeholder="Insira Uma Categoria" list="categoryList" id="todo-edit-category">
+        <datalist id="categoryList">
+          <option value="Pessoal"></option>
+          <option value="Trabalho"></option>
+        </datalist>
+        <span>Data:</span>
+        <input type="date" id="todo-edit-date">
+        <span>Hora:</span>
+        <input type="time" id="todo-edit-time">
+        <span></span>
+        <button id="changeBtn">Salvar Mudanças</button>
+      </div>
+    </div>
+    <div class="todo-modal-close-btn" id="todo-modal-close-btn">X</div>
+  </div>
+
+</body>
+
+</html>
